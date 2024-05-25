@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+<header style="background-color:  #ccb79c;">
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/"
+                class="text-primary  d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <i class="bi bi-bootstrap-fill fs-1 me-3 "></i>
+                <span class="fs-4">Simple header</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="../index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="Booking.html" class="nav-link active ">Book A Free Call</a></li>
+                <li class="nav-item"><a href="Contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="FAQs.html" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="About.html" class="nav-link">About</a></li>
+            </ul>
+        </header>
+    </div>
+</header>
+
+<body>
+    <div style="display: flex;justify-content: center; align-items: center; position: relative;">
+        <div class="app-container" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak>
+
+            <div date-picker datepicker-title="Select Date" picktime="true" pickdate="true" pickpast="false"
+                mondayfirst="false" custom-message="You have selected" selecteddate="ctrl.selected_date"
+                updatefn="ctrl.updateDate(newdate)">
+
+                <div class="datepicker" ng-class="{
+                        'am': timeframe == 'am',
+                        'pm': timeframe == 'pm',
+                        'compact': compact
+                    }">
+                    <div class="datepicker-header">
+                        <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
+                        <div class="datepicker-subheader">{{ customMessage }} {{ selectedDay }} {{
+                            monthNames[localdate.getMonth()] }} {{ localdate.getDate() }}, {{ localdate.getFullYear() }}
+                        </div>
+                    </div>
+                    <div class="datepicker-calendar">
+                        <div class="calendar-header">
+                            <div class="goback" ng-click="moveBack()" ng-if="pickdate">
+                                <svg width="30" height="30">
+                                    <path fill="none" stroke="#522f02" stroke-width="3" d="M19,6 l-9,9 l9,9" />
+                                </svg>
+                            </div>
+                            <div class="current-month-container">{{ currentViewDate.getFullYear() }} {{
+                                currentMonthName() }}</div>
+                            <div class="goforward" ng-click="moveForward()" ng-if="pickdate">
+                                <svg width="30" height="30">
+                                    <path fill="none" stroke="#522f02" stroke-width="3" d="M11,6 l9,9 l-9,9" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="calendar-day-header">
+                            <span ng-repeat="day in days" class="day-label">{{ day.short }}</span>
+                        </div>
+                        <div class="calendar-grid" ng-class="{false: 'no-hover'}[pickdate]">
+                            <div ng-class="{'no-hover': !day.showday}" ng-repeat="day in month" class="datecontainer"
+                                ng-style="{'margin-left': calcOffset(day, $index)}" track by $index>
+                                <div class="datenumber" ng-class="{'day-selected': day.selected }"
+                                    ng-click="selectDate(day)">
+                                    {{ day.daydate }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timepicker" ng-if="picktime == 'true'">
+                        <div ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }">
+                            <div class="timepicker-container-outer" selectedtime="time" timetravel>
+                                <div class="timepicker-container-inner">
+                                    <div class="timeline-container" ng-mousedown="timeSelectStart($event)"
+                                        sm-touchstart="timeSelectStart($event)">
+                                        <div class="current-time">
+                                            <div class="actual-time">{{ time }}</div>
+                                        </div>
+                                        <div class="timeline">
+                                        </div>
+                                        <div class="hours-container">
+                                            <div class="hour-mark" ng-repeat="hour in getHours() track by $index"></div>
+                                        </div>
+                                    </div>
+                                    <div class="display-time">
+                                        <div class="decrement-time" ng-click="adjustTime('decrease')">
+                                            <svg width="24" height="24">
+                                                <path stroke="white" stroke-width="2" d="M8,12 h8" />
+                                            </svg>
+                                        </div>
+                                        <div class="time" ng-class="{'time-active': edittime.active}">
+                                            <input type="text" class="time-input" ng-model="edittime.input"
+                                                ng-keydown="changeInputTime($event)"
+                                                ng-focus="edittime.active = true; edittime.digits = [];"
+                                                ng-blur="edittime.active = false" />
+                                            <div class="formatted-time">{{ edittime.formatted }}</div>
+                                        </div>
+                                        <div class="increment-time" ng-click="adjustTime('increase')">
+                                            <svg width="24" height="24">
+                                                <path stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="am-pm-container">
+                                        <div class="am-pm-button" ng-click="changetime('am');">am</div>
+                                        <div class="am-pm-button" ng-click="changetime('pm');">pm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttons-container">
+                        <div class="cancel-button">CANCEL</div>
+                        <div class="save-button">SAVE</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 625px" class="container">
+        <h1 class="text-center ">Schedule Your Time With Us!</h1>
+        <p>
+            Let us show you how we can put on your desk extra 5-20 new cases monthly.
+        </p>
+    </div>
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3>Request a Demo</h3>
+                <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for
+                    you.</p>
+                <form>
+                    <div class="row">
+                        <div class="mb-3 col-6 ">
+                            <label class="col-form-label-lg" for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control border-primary  form-control-lg" id="name"
+                                aria-describedby="nameHelp" required>
+                            <div id="nameHelp" class="form-text">Type Your Name.</div>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label class="col-form-label-lg" for="Surname" class="form-label">Surname</label>
+                            <input type="text" class="form-control border-primary form-control-lg" id="Surname"  aria-describedby="surnameHelp" required>
+                            <div id="surnameHelp" class="form-text">Type Your Surname.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6 ">
+                            <label class="col-form-label-lg" for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control border-primary form-control-lg" id="phone"
+                                aria-describedby="phoneHelp" required>
+                            <div id="phoneHelp" class="form-text">Type Your Phone Number.</div>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label class="col-form-label-lg" for="email" class="form-label">E-Mail</label>
+                            <input type="email" class="form-control border-primary form-control-lg" id="email"  aria-describedby="emailHelp" required>
+                            <div id="emailHelp" class="form-text">Type Your E-Mail Address.</div>
+                        </div>
+                    </div>
+                    <div class=" mb-3 form-group">
+                        <label class="col-form-label-lg" for="additionalInfo">Additional Information</label>
+                        <textarea class="form-control border-primary form-control-lg" id="additionalInfo" rows="4" aria-describedby="additionalInfoHelp"></textarea>
+                        <div id="additionalInfoHelp" class="form-text">Type Your Additional Information.</div>
+                      </div>
+                    <div class="mb-3 form-check text-start ">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label col-form-label-lg" for="exampleCheck1">I confirm that I want to receive content from this company using any contact information I provide.</label>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center fs-2 ">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <i class="bi bi-bootstrap-fill"></i>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3 fs-2 "><a class="text-body-secondary" href="#"><i class="bi bi-youtube"></i></a></li>
+                <li class="ms-3 fs-2 "><a class="text-body-secondary" href="#"><i class="bi bi-instagram"></i></a></li>
+                <li class="ms-3 fs-2 "><a class="text-body-secondary" href="#"><i class="bi bi-discord"></i></use>
+                        </svg></a></li>
+            </ul>
+        </footer>
+    </div>
+
+</footer>
+<script src="../js/bootstrap_js/bootstrap.min.js"></script>
+<script src="../js/datePicker.js"></script>
+
+</html>
