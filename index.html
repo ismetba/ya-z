@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <header style="background-color:  #ccb79c;">
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="/"
                 class="text-primary  d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <i class="bi bi-bootstrap-fill fs-1 me-3 "></i>
-                <span class="fs-4">Simple header</span>
+                <img width="60px" src="images/logo.png" class="me-3 rounded"/>
+                <span class="fs-4" id="brandName"></span>
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="index.html" class="nav-link active " aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="./pages/Booking.html" class="nav-link ">Book A Free Call</a></li>
-                <li class="nav-item"><a href="./pages/Contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="./pages/FAQs.html" class="nav-link">FAQs</a></li>
-                <li class="nav-item"><a href="./pages/About.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a id="headerHome" href="index.html" class="nav-link active "
+                        aria-current="page"></a></li>
+                <li class="nav-item"><a id="headerBookAFree" href="./pages/Booking.html" class="nav-link "></a></li>
+                <li class="nav-item"><a id="headerContact" href="./pages/Contact.html" class="nav-link"></a></li>
+                <li class="nav-item"><a id="headerFAQs" href="./pages/FAQs.html" class="nav-link"></a></li>
+                <li class="nav-item"><a id="headerAbout" href="./pages/About.html" class="nav-link"></a></li>
             </ul>
         </header>
     </div>
@@ -32,24 +34,20 @@
     <div class="container col-xxl-8 px-4 py-5 ">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="images/bussines_1.jpg" class="d-block mx-lg-auto img-fluid rounded "
-                    alt="Bootstrap Themes" width="300" loading="lazy">
+                <img src="images/bussines_1.jpg" class="d-block mx-lg-auto img-fluid rounded " alt="Bootstrap Themes"
+                    width="300" loading="lazy">
             </div>
             <div class="col-lg-6">
-                <h1 class="display-5 fw-bold  lh-1 mb-3">Responsive left-aligned hero with image
-                </h1>
-                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the
-                    world’s
-                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
-                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <h1 id="heroTitle" class="display-5 fw-bold  lh-1 mb-3"></h1>
+                <p id="heroParagraph" class="lead"></p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2">Book A Free Call</button>
+                    <button id="heroButton" type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2"></button>
                 </div>
             </div>
         </div>
     </div>
     <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 border-bottom">Custom cards</h2>
+        <h2 id="customCardsTitle" class="pb-2 border-bottom"></h2>
 
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
             <div class="col">
@@ -61,7 +59,7 @@
                     /* bottom, image */
                     url(images/features_1.jpg);background-size: cover;">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+                        <h3 id="cardTitle1" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
                         <ul class="d-flex list-unstyled mt-auto">
                             <li class="me-auto">
                                 <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
@@ -71,13 +69,13 @@
                                 <svg class="bi me-2" width="1em" height="1em">
                                     <use xlink:href="#geo-fill"></use>
                                 </svg>
-                                <small>Earth</small>
+                                <small id="card1SubTextLeft"></small>
                             </li>
                             <li class="d-flex align-items-center">
                                 <svg class="bi me-2" width="1em" height="1em">
                                     <use xlink:href="#calendar3"></use>
                                 </svg>
-                                <small>3d</small>
+                                <small id="card1SubTextRight"></small>
                             </li>
                         </ul>
                     </div>
@@ -93,8 +91,7 @@
                     /* bottom, image */
                     url(images/features_2.jpg);background-size: cover;">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines
-                        </h3>
+                        <h3 id="cardTitle2" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
                         <ul class="d-flex list-unstyled mt-auto">
                             <li class="me-auto">
                                 <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
@@ -104,13 +101,13 @@
                                 <svg class="bi me-2" width="1em" height="1em">
                                     <use xlink:href="#geo-fill"></use>
                                 </svg>
-                                <small>Canada</small>
+                                <small id="card2SubTextLeft"></small>
                             </li>
                             <li class="d-flex align-items-center">
                                 <svg class="bi me-2" width="1em" height="1em">
                                     <use xlink:href="#calendar3"></use>
                                 </svg>
-                                <small>4d</small>
+                                <small id="card2SubTextRight"></small>
                             </li>
                         </ul>
                     </div>
@@ -126,7 +123,7 @@
                     /* bottom, image */
                     url(images/features_3.jpg);background-size: cover;">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+                        <h3 id="cardTitle3" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
                         <ul class="d-flex list-unstyled mt-auto">
                             <li class="me-auto">
                                 <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
@@ -136,13 +133,13 @@
                                 <svg class="bi me-2" width="1em" height="1em">
                                     <use xlink:href="#geo-fill"></use>
                                 </svg>
-                                <small>California</small>
+                                <small id="card3SubTextLeft"></small>
                             </li>
                             <li class="d-flex align-items-center">
                                 <svg class="bi me-2" width="1em" height="1em">
                                     <use xlink:href="#calendar3"></use>
                                 </svg>
-                                <small>5d</small>
+                                <small id="card3SubTextRight"></small>
                             </li>
                         </ul>
                     </div>
@@ -151,13 +148,12 @@
         </div>
     </div>
     <div class="container px-4 py-5">
-        <h2 class="pb-2 border-bottom">Features with title</h2>
+        <h2 id="featuresMainTitle" class="pb-2 border-bottom"></h2>
 
         <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
             <div class="col d-flex flex-column align-items-start gap-2">
-                <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
-                <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add
-                    onto it with another sentence and probably just keep going until we run out of words.</p>
+                <h2 id="featuresTitle" class="fw-bold text-body-emphasis"></h2>
+                <p id="featuresParagraph" class="text-body-secondary"></p>
             </div>
 
             <div class="col">
@@ -167,8 +163,8 @@
                             class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
                             <i class="bi bi-briefcase-fill"></i>
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+                        <h4 id="feature1Title" class="fw-semibold mb-0 text-body-emphasis"></h4>
+                        <p id="feature1Paragraph" class="text-body-secondary"></p>
                     </div>
 
                     <div class="col d-flex flex-column gap-2">
@@ -176,8 +172,8 @@
                             class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
                             <i class="bi bi-calendar-day-fill"></i>
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+                        <h4 id="feature2Title" class="fw-semibold mb-0 text-body-emphasis"></h4>
+                        <p id="feature2Paragraph" class="text-body-secondary"></p>
                     </div>
 
                     <div class="col d-flex flex-column gap-2">
@@ -185,8 +181,8 @@
                             class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
                             <i class="bi bi-pencil-square"></i>
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+                        <h4 id="feature3Title" class="fw-semibold mb-0 text-body-emphasis"></h4>
+                        <p id="feature3Paragraph" class="text-body-secondary"></p>
                     </div>
 
                     <div class="col d-flex flex-column gap-2">
@@ -194,8 +190,8 @@
                             class=" feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
                             <i class="bi bi-suitcase-lg-fill"></i>
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+                        <h4 id="feature4Title" class="fw-semibold mb-0 text-body-emphasis"></h4>
+                        <p id="feature4Paragraph" class="text-body-secondary"></p>
                     </div>
                 </div>
             </div>
@@ -204,10 +200,9 @@
     <div class="container py-4">
         <div class="h-100 p-5 text-bg-dark rounded-3"
             style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(75, 40, 1) 35%, rgb(151, 112, 4) 100%);">
-            <h2>Jumbotron</h2>
-            <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look.
-                Then, mix and match with additional component themes and more.</p>
-            <button class="btn btn-outline-light" type="button">Book A Free Call</button>
+            <h2 id="jumbotronTitle"></h2>
+            <p id="jumbotronParagraph"></p>
+            <button id="jumbotronButton" class="btn btn-outline-light" type="button"></button>
         </div>
     </div>
 </body>
@@ -231,5 +226,6 @@
     </div>
 </footer>
 <script src="js/bootstrap_js/bootstrap.min.js"></script>
+<script src="js/textLoader.js"></script>
 
 </html>
