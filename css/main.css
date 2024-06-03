@@ -1,617 +1,614 @@
-[ng\:cloak], [ng-cloak], .ng-cloak {
+.text-monospace {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+@media (min-width: 576px) {
+  .text-sm-left {
+    text-align: left !important;
+  }
+
+  .text-sm-right {
+    text-align: right !important;
+  }
+
+  .text-sm-center {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
+  }
+
+  .text-md-right {
+    text-align: right !important;
+  }
+
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-lg-left {
+    text-align: left !important;
+  }
+
+  .text-lg-right {
+    text-align: right !important;
+  }
+
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-xl-left {
+    text-align: left !important;
+  }
+
+  .text-xl-right {
+    text-align: right !important;
+  }
+
+  .text-xl-center {
+    text-align: center !important;
+  }
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+
+.font-weight-lighter {
+  font-weight: lighter !important;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-weight-bolder {
+  font-weight: bolder !important;
+}
+
+.font-italic {
+  font-style: italic !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #0056b3 !important;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
+
+a.text-secondary:hover,
+a.text-secondary:focus {
+  color: #494f54 !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+a.text-success:hover,
+a.text-success:focus {
+  color: #19692c !important;
+}
+
+.text-info {
+  color: #17a2b8 !important;
+}
+
+a.text-info:hover,
+a.text-info:focus {
+  color: #0f6674 !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #ba8b00 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+a.text-danger:hover,
+a.text-danger:focus {
+  color: #a71d2a !important;
+}
+
+.text-light {
+  color: #f8f9fa !important;
+}
+
+a.text-light:hover,
+a.text-light:focus {
+  color: #cbd3da !important;
+}
+
+.text-dark {
+  color: #343a40 !important;
+}
+
+a.text-dark:hover,
+a.text-dark:focus {
+  color: #121416 !important;
+}
+
+.text-body {
+  color: #212529 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.text-black-50 {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-break {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.text-reset {
+  color: inherit !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #adb5bd;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  @page {
+    size: a3;
+  }
+
+  body {
+    min-width: 992px !important;
+  }
+
+  .container {
+    min-width: 992px !important;
+  }
+
+  .navbar {
     display: none;
+  }
+
+  .badge {
+    border: 1px solid #000;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6 !important;
+  }
+
+  .table-dark {
+    color: inherit;
+  }
+
+  .table-dark th,
+  .table-dark td,
+  .table-dark thead th,
+  .table-dark tbody+tbody {
+    border-color: #dee2e6;
+  }
+
+  .table .thead-dark th {
+    color: inherit;
+    border-color: #dee2e6;
+  }
 }
 
-
-.app-container {
-	border-radius: 4px;
-	overflow: hidden;
-	width: 720px;
-	height: auto;
-	max-width: 100%;
-	position: absolute;
-	top: 120px;
-	left: 0;
-	right: 0;
-	margin: auto;
-}
-.buttons-container {
-	position: absolute;
-	bottom: 15px;
-	right: 0;
-	height: 40px;
-	font-family: "Roboto", sans-serif;
-}
-.cancel-button,
-.save-button {
-	float: left;
-	height: 40px;
-	line-height: 40px;
-	padding: 0 15px;
-	border-radius: 2px;
-	margin-right: 15px;
-	cursor: pointer;
-	transition: all 0.15s ease;
-}
-.cancel-button {
-	background: white;
-	color: #522f02;
-}
-.save-button {
-	background: #522f02;
-	color: white;
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #fafafa;
+  color: gray;
 }
 
-/* Datepicker Stuff */
-.datepicker {
-    position: relative;
-	width: 100%;
-    display: block;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    font-family: "Roboto", sans-serif;
-	overflow: hidden;
-	transition: all 0.15s ease;
-}
-.datepicker.am {
-	background: white;
-}
-.datepicker.pm {
-	background: #522f02;
-}
-.datepicker-header {
-	width: 100%;
-    color: white;
-	overflow: hidden;
-}
-.datepicker-title {
-	width: 50%;
-	float: left;
-	height: 60px;
-	line-height: 60px;
-	padding: 0 15px;
-	text-align: left;
-	font-size: 20px;
-}
-.datepicker-subheader {
-	width: 50%;
-	float: left;
-	height: 60px;
-	line-height: 60px;
-	font-size: 14px;
-	padding: 0 15px;
-	text-align: right;
-}
-.datepicker-calendar {
-    width: 50%;
-	float: left;
-    padding: 20px 15px 15px;
-    max-width: 400px;
-    display: block;
-}
-.calendar-header {
-    color: black;
-    font-weight: bolder;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px 0;
-    position: relative;
-}
-.current-month-container {
-    display: inline-block;
-    height: 30px;
-    position: relative;
-}
-.goback,
-.goforward {
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    top: -4px;
-}
-.goback path,
-.goforward path {
-	transition: stroke 0.15s ease;
-}
-.goback {
-    float: left;
-    margin-left: 3.8%;
-}
-.goforward {
-    float: right;
-    margin-right: 3.8%;
-}
-.calendar-day-header {
-    width: 100%;
-    position: relative;
-}
-.day-label {
-    color: #8A8A8A;
-    padding: 5px 0;
-    width: 14.2857142%;
-    display: inline-block;
-    text-align: center;
-}
-.datecontainer {
-    width: 14.2857142%;
-    display: inline-block;
-    text-align: center;
-    padding: 4px 0;
-}
-.datenumber {
-    max-width: 35px;
-    max-height: 35px;
-    line-height: 35px;
-    margin: 0 auto;
-    color: #8A8A8A;
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-    z-index: 1;
-    transition: all .25s cubic-bezier(0.7,-0.12, 0.2, 1.12);
-}
-.no-hover .datenumber,
-.no-hover .datenumber:hover,
-.no-hover .datenumber:before,
-.no-hover .datenumber:hover::before {
-    cursor: default;
-    color: #8A8A8A;
-    background: transparent;
-    opacity: 0.5;
-}
-.no-hover .datenumber.day-selected {
-    color: white;
-}
-.datenumber:hover {
-    color: white;
-}
-.datenumber:before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 35px;
-    width: 35px;
-    border-radius: 100px;
-    z-index: -1;
-    background: transparent;
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75);
-    transition: all .25s cubic-bezier(0.7,-0.12, 0.2, 1.12);
-    transition-property: background, transform, color, border;
-}
-.datenumber:hover::before {
-    background: #ccb79c;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-}
-.day-selected {
-    color: white;
-}
-.datenumber.day-selected:before {
-    background: #ccb79c;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation: select-date .25s forwards;
-    -moz-animation: select-date .25s forwards;
-    animation: select-date .25s forwards;
-}
-@-webkit-keyframes select-date {
-    0% { background: #ccb79c; }
-    100% { background: #ccb79c; }
-}
-@keyframes select-date {
-    0% { background: #ccb79c; }
-    100% { background: #ccb79c; }
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  color: #1089ff;
 }
 
-/* timepicker styles */
-.timepicker-container-outer {
-  width: 50%;
-  max-width: 700px;
-  float: left;
-  display: block;
-  padding: 40px 30px 30px;
-  position: relative;
-  top: 50px;
-  overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
-  transition: background 0.15s ease;
+a:hover,
+a:focus {
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-.timepicker-container-inner {
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #000;
+}
+
+.bg-primary {
+  background: #1089ff !important;
+}
+
+.ftco-section {
+  padding: 7em 0;
+}
+
+.ftco-no-pt {
+  padding-top: 0;
+}
+
+.ftco-no-pb {
+  padding-bottom: 0;
+}
+
+.heading-section {
+  font-size: 28px;
+  color: #000;
+}
+
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.form-control {
+  height: 52px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  border-radius: 2px;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.form-control:-ms-input-placeholder {
+  /* IE 0+ */
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.form-control:focus,
+.form-control:active {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+  height: inherit !important;
+}
+
+.wrapper {
   width: 100%;
-  height: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  position: relative;
-  display: block;
+  -webkit-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
 }
 
-.timeline-container {
-  display: block;
-  float: left;
-  position: relative;
+.contact-wrap {
+  background: #fff;
+}
+
+.info-wrap h3 {
+  color: #fff;
+}
+
+.info-wrap .dbox {
   width: 100%;
-  height: 36px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
 }
 
-.current-time {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  top: -25px;
-  left: -20px;
+.info-wrap .dbox:last-child {
+  margin-bottom: 0;
+}
+
+.info-wrap .dbox p {
+  margin-bottom: 0;
+}
+
+.info-wrap .dbox p span {
+  font-weight: 600;
+  color: #fff;
+}
+
+.info-wrap .dbox p a {
+  color: #fff;
+}
+
+.info-wrap .dbox .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.info-wrap .dbox .icon span {
+  font-size: 20px;
+  color: #fff;
+}
+
+.info-wrap .dbox .text {
+  width: calc(100% - 50px);
+}
+
+@media (min-width: 992px) {
+  .info-wrap {
+    margin-top: -20px;
+    margin-bottom: -20px;
+    border-radius: 5px;
+  }
+}
+
+.btn {
+  padding: 12px 16px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.current-time::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  background: #ccb79c;
-  transition: all 0.15s ease; 
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  border-radius: 20px 20px 3px 20px;
-  z-index: -1;
-  top: 0;
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  margin-bottom: 20px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.actual-time {
-  color: white;
-  line-height: 40px;
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none !important;
+  -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+  -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+}
+
+.btn.btn-primary {
+  background: #1089ff !important;
+  border-color: #1089ff !important;
+  color: #fff;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  border-color: #006fdc !important;
+  background: #006fdc !important;
+}
+
+#contactForm .error {
+  color: red;
   font-size: 12px;
-  text-align: center;
-  transition: all 0.15s ease;
 }
 
-.timeline {
-  display: block;
-  z-index: 1;
+#contactForm .form-control {
+  font-size: 16px;
+}
+
+#message {
+  resize: vertical;
+}
+
+#form-message-warning,
+#form-message-success {
+  display: none;
+}
+
+#form-message-warning {
+  color: red;
+}
+
+#form-message-success {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submitting {
+  float: left;
   width: 100%;
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-}
-.timeline::before, .timeline::after {
-  content: '';
-  display: block;
-  width: 2px;
-  height: 10px;
-  top: -6px;
-  position: absolute;
-  background: #522f02;
-  left: -1px;
-  transition: background 0.15s ease;
-}
-.timeline::after {
-  left: auto;
-  right: -1px;
+  padding: 10px 0;
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.hours-container {
-  display: block;
-  z-index: 0;
-  width: 100%;
-  height: 10px;
-  position: absolute;
-  top: 31px;
-  left: 1px;
+.media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
-.hour-mark {
-  width: 2px;
-  display: block;
-  float: left;
-  height: 4px;
-  background: #522f02;
-  position: relative;
-  margin-left: calc((100% / 12) - 2px);
-  transition: background 0.15s ease;
+.media-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
-.hour-mark:nth-child(3n) {
-  height: 6px;
-  top: -1px;
-}
-
-.display-time {
-  width: calc(60% - 30px);
-  display: block;
-  margin-top: 30px;
-  height: 36px;
-  line-height: 36px;
-  overflow: hidden;
-  float: left;
-  position: relative;
-  font-size: 20px;
-  text-align: center;
-  transition: color 0.15s ease;
-}
-.decrement-time,
-.increment-time {
-  cursor: pointer;
-  position: absolute;
-  display: block;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  top: 6px;
-  font-size: 20px;
-}
-.decrement-time {
-  left: 0;
-  text-align: left;
-}
-.increment-time {
-  right: 0;
-  text-align: right;
-}
-.increment-time path,
-.decrement-time path{
-	transition: all 0.15s ease;
-}
-.time {
-    width: calc(100% - 48px);
-	position: relative;
-	left: 24px;
-	height: 36px;
-	&:after {
-		content: '';
-		height: 2px;
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		background: white;
-		left: 0;
-		right: 0;
-		opacity: 0.5;
-		transition: all 0.15s ease;
-	}
-}
-.time.time-active:after {
-	display: none;
-}
-.time-input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 34px;
-	line-height: 34px;
-	bottom: 2px;
-	width: 100%;
-	border: none;
-	background: none;
-	text-align: center;
-	color: white;
-	font-size: inherit;
-	opacity: 0;
-	transition: all 0.15s ease;
-	cursor: pointer;
-	&:focus,
-	&:active {
-		outline: none;
-	}
-}
-.formatted-time {
-	cursor: pointer;
-}
-.time-input:focus {
-	cursor: auto;
-	& ~ .formatted-time {
-		border-radius: 2px;
-		background: #522f02;
-		color: white;
-		cursor: default;
-	}
-}
-
-.am-pm-container {
-  width: 40%;
-  padding-left: 15px;
-  float: right;
-  height: 36px;
-  line-height: 36px;
-  display: block;
-  position: relative;
-  margin-top: 30px;
-}
-
-.am-pm-button {
-  width: calc(50% - 5px);
-  height: 36px;
-  line-height: 36px;
-  background: #2196F3;
-  text-align: center;
-  color: white;
-  border-radius: 4px;
-  float: left;
-  cursor: pointer;
-}
-.am-pm-button:first-child {
-  background: #522f02;
-  color: white;
-}
-.am-pm-button:last-child {
-  background: white;
-  color: #522f02;
-  margin-left: 10px;
-}
-
-@-webkit-keyframes select-date-pm {
-	0% { background: rgba(255,255,255,0.5); }
-	100% { background: #FFF; }
-}
-@keyframes select-date-pm {
-	0% { background: rgba(255,255,255,0.5); }
-	100% { background: #FFF; }
-}
-
-
-.datepicker.am {
-	.datepicker-header {
-		color: white;
-		background: #522f02;
-	}
-	.current-time::after {
-		background: #522f02;
-	}
-	.actual-time {
-	    color: white;
-	}
-	.display-time {
-	    color: #ccb79c;
-	}
-	.time-input {
-		color: #ccb79c;
-	}
-	.time:after {
-		background: #ccb79c;
-	}
-	.increment-time path,
-	.decrement-time path{
-		stroke: #ccb79c;
-	}
-}
-
-.datepicker.pm {
-	.datepicker-header {
-		background: white;
-		color: #ccb79c;
-	}
-	.datepicker-subheader {
-		color: #522f02;
-	}
-	
-	.goback:before,
-	.goback:after,
-	.goforward:before,
-	.goforward:after {
-		background: white;
-	}
-	.day-label {
-		color: white;
-	}
-	.datenumber {
-		color: white;
-	}
-	.datenumber:hover::before {
-		background: rgba(255,255,255,0.5);
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-		transform: scale(1);
-	}
-	.datenumber.day-selected {
-		color: #ccb79c;
-	}
-	.datenumber.day-selected:before {
-		background: white;
-		-webkit-animation: select-date-pm .25s forwards;
-		-moz-animation: select-date-pm .25s forwards;
-		animation: select-date-pm .25s forwards;
-	}
-	.current-month-container {
-		color: white;
-	}
-	.current-time::after {
-	    background: white;
-	}
-	.actual-time {
-	    color: #ccb79c;
-	}
-	.display-time {
-    	color: white;
-	}
-	.timeline::before, .pm .timeline::after {
-	    background: white;
-	}
-	.hour-mark {
-		background: white;
-	}
-	.am-pm-button:last-child {
-		color: #ccb79c;
-	}
-	.cancel-button {
-		background: none;
-		color: white;
-	}
-	.save-button {
-		background: white;
-		color: #ccb79c;
-	}
-	.goback path,
-	.goforward path {
-		stroke: white;
-	}
-	.time-input:focus ~ .formatted-time {
-		background: white;
-		color: #ccb79c;
-	}
-}
-
-.datepicker.compact {
-	.datepicker-title,
-	.datepicker-subheader {
-		width: 100%;
-		text-align: center;
-	}
-	.datepicker-title {
-		height: 50px;
-		line-height: 50px;
-	}
-	.datepicker-subheader {
-		height: 30px;
-		line-height: 30px;
-	}
-    .display-time {
-        width: 60%;
-        font-size: 20px;
-        line-height: 36px;
-    }
-	.app-container {
-		width: 100%;
-	}
-	.datepicker-calendar {
-		width: 100%;
-		margin: 0 auto;
-		float: none;
-	}
-	.timepicker-container-outer {
-		width: 100%;
-		margin: 0 auto;
-		float: none;
-		top: -15px;
-	}
-	.buttons-container {
-		position: relative;
-		float: right;
-	}
-}
-
-

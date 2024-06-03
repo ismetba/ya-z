@@ -5,7 +5,6 @@ fetch('js/text.json')
         document.getElementById('headerHome').innerHTML = json.headerHome;
         document.getElementById('headerBookAFree').innerHTML = json.headerBookAFree;
         document.getElementById('headerContact').innerHTML = json.headerContact;
-        document.getElementById('headerFAQs').innerHTML = json.headerFAQs;
         document.getElementById('headerAbout').innerHTML = json.headerAbout;
         document.getElementById('heroTitle').innerHTML = json.heroTitle;
         document.getElementById('heroParagraph').innerHTML = json.heroParagraph;
