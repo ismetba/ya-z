@@ -1,6 +1,10 @@
 fetch('js/text.json')
     .then((response) => response.json())
     .then((json) => {
+        document.getElementById('discordLink').setAttribute("href",json.discordLink);
+        document.getElementById('instagramLink').setAttribute("href",json.instagramLink);
+        document.getElementById('youtubeLink').setAttribute("href",json.youtubeLink);
+
         document.getElementById('brandName').innerHTML = json.brandName;
         document.getElementById('headerHome').innerHTML = json.headerHome;
         document.getElementById('headerBookAFree').innerHTML = json.headerBookAFree;
@@ -33,6 +37,7 @@ fetch('js/text.json')
         document.getElementById('jumbotronTitle').innerHTML = json.jumbotronTitle;
         document.getElementById('jumbotronParagraph').innerHTML = json.jumbotronParagraph;
         document.getElementById('jumbotronButton').innerHTML = json.jumbotronButton;
+
         //document.getElementById('').innerHTML = json.;
     });
 

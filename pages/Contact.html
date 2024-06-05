@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advisory Scale / Yağız Şallı</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advisory Scale / Yağız Şallı</title>
+	<link rel="icon" type="image/x-icon" href="/images/logo.png">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/animate.css">
 </head>
 <header style="background-color: #4b2c08;">
-    <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
-            <a href="/"
-                class="text-white  d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img width="60px" src="../images/logo.png" class="me-3 rounded" />
-                <span class="fs-4" id="brandName"></span>
-            </a>
-
-            <ul class="nav nav-pills d-flex align-items-center">
-                <li class="nav-item h6"><a id="headerHome" href="../index.html" class="nav-link text-white"
-                        aria-current="page"></a></li>
-                <li class="nav-item h6"><a id="headerContact" href="Contact.html" class="nav-link active"></a></li>
-                <li class="nav-item h6"><a id="headerAbout" href="About.html" class="nav-link text-white"></a></li>
-				<li class="nav-item h6"><a id="headerBookAFree" href="Booking.html" class="nav-link text-white"></a></li>
-            </ul>
-        </header>
-    </div>
+	<div class="container">
+		<header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+			<a href="/"
+				class="text-white  d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+				<img width="60px" src="../images/logo.png" class="me-3 rounded" />
+				<span class="fs-4" id="brandName"></span>
+			</a>
+			<div class="d-flex flex-column justify-content-center align-items-center">
+				<ul class="nav nav-pills d-flex align-items-center">
+					<li class="nav-item h6"><a id="headerHome" href="../index.html" class="nav-link text-white"
+							aria-current="page"></a></li>
+					<li class="nav-item h6"><a id="headerContact" href="Contact.html"
+							class="nav-link border border-white text-white"></a></li>
+					<li class="nav-item h6"><a id="headerAbout" href="About.html" class="nav-link text-white"></a></li>
+					<li class="nav-item h6"><a id="headerBookAFree" href="Booking.html"
+							class="nav-link  text-white d-none d-sm-block"></a>
+					</li>
+				</ul>
+				<a href="Booking.html"
+					class="text-decoration-none bg-secondary p-3 rounded text-primary display-6 d-sm-none">Book A Free
+					Call</a>
+			</div>
+		</header>
+	</div>
 </header>
+
 <body>
-    <section class="ftco-section">
+	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Contact Form #01</h2>
+					<h2 id="formMainTitle" class="heading-section"></h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -43,36 +52,41 @@
 						<div class="row no-gutters">
 							<div class="col-md-7 d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Get in touch</h3>
-									<div id="form-message-warning" class="mb-4"></div> 
-				      		<div id="form-message-success" class="mb-4">
-				            Your message was sent, thank you!
-				      		</div>
+									<h3 id="formTitle" class="mb-4"></h3>
+									<div id="form-message-warning" class="mb-4"></div>
+									<div id="form-message-success" class="mb-4">
+										Your message was sent, thank you!
+									</div>
 									<form method="POST" id="contactForm" name="contactForm">
 										<div class="row">
 											<div class="col-md-6 mt-3">
 												<div class="form-group">
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+													<input type="text" class="form-control" name="name" id="nameInput"
+														placeholder="Name">
 												</div>
 											</div>
-											<div class="col-md-6 mt-3"> 
+											<div class="col-md-6 mt-3">
 												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12 mt-3">
-												<div class="form-group">
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+													<input type="email" class="form-control" name="email"
+														id="emailInput" placeholder="Email">
 												</div>
 											</div>
 											<div class="col-md-12 mt-3">
 												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="7" placeholder="Message"></textarea>
+													<input type="text" class="form-control" name="subject"
+														id="subjectInput" placeholder="Subject">
 												</div>
 											</div>
 											<div class="col-md-12 mt-3">
 												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-primary">
+													<textarea name="message" class="form-control" id="messageInput"
+														cols="30" rows="7" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12 mt-3">
+												<div class="form-group">
+													<input id="formButton" type="submit" value="Send Message"
+														class="btn btn-primary">
 													<div class="submitting"></div>
 												</div>
 											</div>
@@ -82,40 +96,44 @@
 							</div>
 							<div class="col-md-5 d-flex align-items-stretch">
 								<div class="info-wrap bg-primary w-100 p-lg-5 p-4">
-									<h3 class="mb-4 mt-md-4">Contact us</h3>
-				        	<div class="dbox w-100 d-flex align-items-start">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<i class="bi bi-geo-alt-fill  fs-3"></i>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p class="ms-3"><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<i class="bi bi-telephone-fill  fs-3"></i>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p  class="ms-3"><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<i class="bi bi-envelope-at-fill  fs-3"></i>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p  class="ms-3"><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<i class="bi bi-globe fs-3"></i>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p  class="ms-3"><span>Website</span> <a href="#">yoursite.com</a></p>
-					          </div>
-				          </div>
-			          </div>
+									<h3 id="contactTitle" class="mb-4 mt-md-4"></h3>
+									<div class="dbox w-100 d-flex align-items-start">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="bi bi-geo-alt-fill  fs-3"></i>
+										</div>
+										<div class="text pl-3">
+											<p class="ms-3 d-flex flex-row">
+												<span>Address:  <span id="address"></span></span>
+											</p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="bi bi-telephone-fill  fs-3"></i>
+										</div>
+										<div class="text pl-3">
+											<p class="ms-3"><span>Phone:</span> <a id="phone" href="tel://5537804606">+ 1235 2355
+													98</a></p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="bi bi-envelope-at-fill  fs-3"></i>
+										</div>
+										<div class="text pl-3">
+											<p class="ms-3"><span>Email:</span> <a id="email"
+													href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="bi bi-globe fs-3"></i>
+										</div>
+										<div class="text pl-3">
+											<p class="ms-3"><span>Website</span> <a id="website" href="#">yoursite.com</a></p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -125,21 +143,23 @@
 	</section>
 </body>
 <footer>
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center fs-2 ">
-                <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Advisory Scale</span>
-            </div>
+	<div class="container">
+		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			<div class="col-md-4 d-flex align-items-center fs-2 ">
+				<span class="mb-3 mb-md-0 text-body-secondary">© 2024 Advisory Scale</span>
+			</div>
 
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3 fs-2 "><a class="text-body-secondary" href="#"><i class="bi bi-youtube"></i></a></li>
-                <li class="ms-3 fs-2 "><a class="text-body-secondary" href="#"><i class="bi bi-instagram"></i></a></li>
-                <li class="ms-3 fs-2 "><a class="text-body-secondary" href="#"><i class="bi bi-discord"></i></use>
-                        </svg></a></li>
-            </ul>
-        </footer>
-    </div>
-
+			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+				<li class="ms-3 fs-2 "><a id="youtubeLink" class="text-body-secondary" href="#"><i
+							class="bi bi-youtube"></i></a></li>
+				<li class="ms-3 fs-2 "><a id="instagramLink" class="text-body-secondary" href="#"><i
+							class="bi bi-instagram"></i></a></li>
+				<li class="ms-3 fs-2 "><a id="discordLink" class="text-body-secondary" href="#"><i
+							class="bi bi-discord"></i></use>
+						</svg></a></li>
+			</ul>
+		</footer>
+	</div>
 </footer>
 <script src="../js/bootstrap_js/bootstrap.min.js"></script>
 <script src="../js/jquery.min.js"></script>
@@ -147,4 +167,5 @@
 <script src="../js/jquery.validate.min.js"></script>
 <script src="../js/contactMain.js"></script>
 <script src="../js/ContactTextLoader.js"></script>
+
 </html>

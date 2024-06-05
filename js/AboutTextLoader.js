@@ -10,6 +10,15 @@ fetch('../js/text.json')
         document.getElementById('headerBookAFree').innerHTML = json.headerBookAFree;
         document.getElementById('headerContact').innerHTML = json.headerContact;
         document.getElementById('headerAbout').innerHTML = json.headerAbout;
+
+        
+        document.getElementById('yourName').innerHTML = json.yourName;
+        document.getElementById('yourJob').innerHTML = json.yourJob;
+        document.getElementById('aboutParagraph1').innerHTML = json.aboutParagraph1;
+        document.getElementById('aboutParagraph2').innerHTML = json.aboutParagraph2;
+        document.getElementById('hireMeUp').innerHTML = json.hireMeUp;
+        document.getElementById('hireMetitle').innerHTML = json.hireMetitle;
+        document.getElementById('hireMeButton').innerHTML = json.hireMeButton;
         //document.getElementById('').innerHTML = json.;
     });
 
